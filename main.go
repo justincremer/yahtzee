@@ -7,7 +7,7 @@ import (
 func main() {
 	d := yahtzee.New()
 	for i := 0; i < 10; i++ {
-		d.Update(d.KeepMask)
+		d.Roll(d.KeepMask)
 		d.Display()
 	}
 }

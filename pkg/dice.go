@@ -15,9 +15,9 @@ func New() *Dice {
 	return &Dice{}
 }
 
-func (d *Dice) Update(km [5]bool) {
+func (d *Dice) Roll(km [5]bool) {
 	d.updateMask(km)
-	d.roll()
+	d.updateDice()
 }
 
 func (d *Dice) Display() {
@@ -33,7 +33,7 @@ func (d *Dice) updateMask(km [5]bool) {
 	d.KeepMask = km
 }
 
-func (d *Dice) roll() {
+func (d *Dice) updateDice() {
 	rand.Seed(time.Now().Local().UnixNano())
 	for i, n := range d.KeepMask {
 		if !n {
